@@ -42,6 +42,22 @@ map("n", "<space>la", function()
   require("telescope.builtin").diagnostics { bufnr = nil }
 end, { desc = "Workspace diagnostics" })
 
+map("n", "gd", function()
+  require("telescope.builtin").lsp_definitions {}
+end, { desc = "LSP definitions" })
+
+map("n", "grr", function()
+  require("telescope.builtin").lsp_references {}
+end, { desc = "LSP references" })
+
+map("n", "gri", function()
+  require("telescope.builtin").lsp_implementations {}
+end, { desc = "LSP implementations" })
+
+map("n", "grt", function()
+  require("telescope.builtin").lsp_type_definitions {}
+end, { desc = "LSP type definitions" })
+
 -- Add current directory as workspace folder
 map("n", "<space>lwa", function()
   vim.lsp.buf.add_workspace_folder(vim.fn.getcwd())
@@ -64,9 +80,3 @@ map("n", "<space>df", ":CodeDiff<CR>")
 
 -- VISUAL
 map({ "v" }, ">", ">gv")
-
--- UNMAP
--- vim.api.nvim_del_keymap("n", "<tab>")
--- vim.api.nvim_del_keymap("n", "<S-tab>")
-
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
