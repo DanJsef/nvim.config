@@ -58,6 +58,10 @@ map("n", "grt", function()
   require("telescope.builtin").lsp_type_definitions {}
 end, { desc = "LSP type definitions" })
 
+map("n", "gs", function()
+  require("telescope.builtin").treesitter {}
+end, { desc = "LSP treesitter" })
+
 -- Add current directory as workspace folder
 map("n", "<space>lwa", function()
   vim.lsp.buf.add_workspace_folder(vim.fn.getcwd())
