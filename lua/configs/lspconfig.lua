@@ -24,6 +24,8 @@ local servers = {
   "gopls",
   "dartls",
   "tailwindcss",
+  "copilot",
+  "eslint",
 }
 
 vim.lsp.enable(servers)

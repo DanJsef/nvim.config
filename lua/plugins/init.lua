@@ -74,8 +74,7 @@ return {
   },
 
   {
-    "esmuellert/vscode-diff.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    cmd = "CodeDiff",
+    "github/copilot.vim",
+    lazy = false,
   },
 }
